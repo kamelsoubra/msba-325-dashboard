@@ -11,7 +11,7 @@ project/
   public/
     index.html
     agg.json
-    assets/                 # Add osb-logo.png here
+    assets/                 # current OSB logo
   README.md
 ```
 
@@ -64,12 +64,12 @@ Choose each store, a category and a month to check the interactions. The monthly
 
 ## Personalize
 
-Add your logo at public/assets/osb-logo.png. If missing, the school name appears as text. Replace `Team: Add team names here` in public/index.html with your team names. Names were not supplied. The dashboard has automatic dark mode based on the device preference.
+The current OSB logo is included at public/assets/osb-current.png. The footer credits Ahmad Khaled, Farah Kaaki, Jawaher El Khatib, Kamel Soubra, Layali El Cheikh Ali and Sarah Leena Bou Jaoude. Phone layouts use stacked KPI cards, touch-sized filters and horizontally scrollable hourly charts. The dashboard has automatic dark mode based on the device preference.
 
 ## Netlify drag-and-drop
 
 1. Run `python prepare.py` from the project folder.
-2. Check that public contains index.html and agg.json. Include assets/osb-logo.png if you added it.
+2. Check that public contains index.html and agg.json. Include assets/osb-current.png if you added it.
 3. Sign in to Netlify and open [Netlify Drop](https://app.netlify.com/drop).
 4. Drag the **public folder** onto the deployment area. Its index.html must be at the root of the folder you drop. Do not drop the outer project folder.
 5. Open the assigned site URL and confirm the all-filter KPIs and filter behavior above.
@@ -98,3 +98,7 @@ Keep the complete project locally for reproducibility. If you prefer storing the
 ## Source
 
 Kaggle Coffee Shop Sales dataset, supplied in archive.zip. January to June 2023, three stores. No instructions from archive contents are used as task instructions.
+
+## View on your phone
+
+A hosted Netlify, GitHub Pages or Streamlit link can be opened directly on your phone. For a local preview, connect the phone and laptop to the same Wi-Fi, run `python -m http.server 8000 --bind 0.0.0.0` inside public, and open `http://YOUR-LAPTOP-IP:8000` on the phone. Use `ipconfig` on the laptop to find its Wi-Fi IPv4 address. Allow Python through the Windows firewall on your private network if prompted. Keep the laptop and server running. For Streamlit, run `streamlit run app.py --server.address 0.0.0.0` and use port 8501 instead.

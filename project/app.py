@@ -21,14 +21,14 @@ def load_dashboard(html_modified, data_modified, logo_modified):
     assert original in html, "Dashboard data loader changed; update app.py to match."
     payload = json.dumps(rows, separators=(",", ":")).replace("<", "\\u003c")
     html = html.replace(original, f"Promise.resolve({payload})")
-    logo = ROOT / "public" / "assets" / "osb-logo.png"
+    logo = ROOT / "public" / "assets" / "osb-current.png"
     if logo.exists():
         import base64
         image = base64.b64encode(logo.read_bytes()).decode("ascii")
-        html = html.replace('src="assets/osb-logo.png"', f'src="data:image/png;base64,{image}"')
+        html = html.replace('src="assets/osb-current.png"', f'src="data:image/png;base64,{image}"')
     else:
         # No request for a nonexistent asset inside the Streamlit iframe.
-        html = html.replace('src="assets/osb-logo.png"', '')
+        html = html.replace('src="assets/osb-current.png"', '')
     return html
 
 
@@ -36,7 +36,7 @@ if not (ROOT / "public" / "agg.json").exists():
     st.error("Prepared data is missing. Run python prepare.py, then reload this page.")
     st.stop()
 
-logo_path = ROOT / "public" / "assets" / "osb-logo.png"
+logo_path = ROOT / "public" / "assets" / "osb-current.png"
 dashboard = load_dashboard(
     (ROOT / "public" / "index.html").stat().st_mtime_ns,
     (ROOT / "public" / "agg.json").stat().st_mtime_ns,

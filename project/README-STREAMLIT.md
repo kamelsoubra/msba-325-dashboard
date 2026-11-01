@@ -17,7 +17,7 @@ Open http://localhost:8501 if Streamlit does not open it automatically. Press Ct
 
 ## Files to keep together
 
-app.py, requirements.txt, prepare.py, data/Coffee Shop Sales.csv, public/index.html and public/agg.json. The logo is optional at public/assets/osb-logo.png. Replace the team-name placeholder in public/index.html.
+app.py, requirements.txt, prepare.py, data/Coffee Shop Sales.csv, public/index.html and public/agg.json. The current OSB logo is included at public/assets/osb-current.png, and the team names are in public/index.html. The dashboard adapts to phone screens with stacked KPIs and scrollable hourly charts. See README.md for phone access on the same Wi-Fi or through a hosted link.
 
 The app uses the already validated aggregate data. Run prepare.py again after editing the CSV, then reload the app. The cache checks file modification timestamps.
 
